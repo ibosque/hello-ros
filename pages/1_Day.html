@@ -72,6 +72,27 @@ some people like to keep all of their packages in a single workspace, others lik
 Neither is necessarily better than the other.
 
 Personally I keep separate workspaces for just about everything, and use workspace overlaying whenever I need certain packages in other workspaces.
-  
-</body>
+ 
+ 
+ 
+<h3> Create a  catkin workspace</h3>
+ 
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/
+$ catkin_make
+ 
+ The primary thing that happens when you source your catkin workspace's devel/setup.bash file is that you are setting environment variables.
+
+ 
+ 
+  <h3> Overlay </h3>
+ Overlay in Spanish means "cubrir"
+ 
+ Overlaying refers to building and using a ROS package from source on top of an existing version of that same package. In this way your new or modified version of the package "overlays" the installed one. 
+ 
+ Additionally, if you look in your current directory you should now have a 'build' and 'devel' folder. Inside the 'devel' folder you can see that there are now several setup.*sh files. Sourcing any of these files will overlay this workspace on top of your environment. To understand more about this see the general catkin documentation: catkin. Before continuing source your new setup.*sh file:
+
+$ source devel/setup.bash
+ 
+ </body>
 </html>
