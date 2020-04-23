@@ -3,10 +3,7 @@
 <body>
  
 <h2> Day 2, 23 - 4 - 2020 </h2>
- <h3> Overlay </h3>
- Overlay in Spanish means "cubrir"
- 
- Overlaying refers to building and using a ROS package from source on top of an existing version of that same package. In this way your new or modified version of the package "overlays" the installed one. 
+
  
  <h3> rospack </h3>
  Code is spread across many ROS packages. Navigating with command-line tools such as ls and cd can be very tedious which is why ROS provides tools to help you. 
@@ -22,7 +19,8 @@ roscd is part of the rosbash suite. It allows you to change directory (cd) direc
  so instead of needing to say the specific path where a package is, you just need to say its name and doesnt matter which is your current working directory at the moment
  rosls roscpp_tutorials
  
-  <h3> package (catkin package) </h3>
+ 
+  <h3> Create a package (catkin package) </h3>
  
  For a package to be considered a catkin package it must meet a few requirements:
   <ul>
@@ -35,12 +33,21 @@ roscd is part of the rosbash suite. It allows you to change directory (cd) direc
  "cd ~/catkin_ws/src"
 
  
-
-
+ "catkin_create_pkg beginner_tutorials std_msgs rospy roscpp" with this command you are creating a package called beginner_tutorials and that depends on std_msgs rospy roscpp
  
+If you open now the file package.xml package that has been created in the project folder, you will see these depependencies
+ 
+ <h3> Build a package </h3>
+ 
+ Once you created a package, change directory to the main catkin directory and write the command "
+
+ <h3> Rospack </h3>
+ 
+to see the dependencies of a package write: "rospack depends1 beginner_tutorials"
+ In this case what it will show will be the 3 dependencies std_msgs rospy  and roscpp
     
  
- <img src="../images/catkin_workspace.png" style="width:500px;">
+
   
 </body> 
 </html>
